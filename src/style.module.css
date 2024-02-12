@@ -1,0 +1,21 @@
+.main_container {
+  display: flex;
+  height: 100vh;
+  padding: 25px;
+  flex-direction: column;
+}
+
+.header {
+  flex: 1;
+  background-color: lightgreen;
+}
+
+.tv_show_detail {
+  flex: 2;
+  background-color: pink;
+}
+
+.recommendations {
+  flex: 1;
+  background-color: lightblue;
+}
