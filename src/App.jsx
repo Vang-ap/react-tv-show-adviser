@@ -5,6 +5,8 @@ import "./global.css";
 
 import styleApp from "./style.module.css";
 import { TvShowDetail } from "./components/tvShowDetail/TvShowDetail.jsx";
+import { Logo } from "./components/logo/logo.jsx";
+import logoImage from "./assets/images/logo.png";
 
 export function App() {
   const [currentTvShow, setCurrentTvShow] = useState();
@@ -35,8 +37,11 @@ export function App() {
       <div className={styleApp.header}>
         <div className="row">
           <div className="col-4">
-            <div>Logo</div>
-            <div>Subtitle</div>
+            <Logo
+              image={logoImage}
+              title="Watowatch"
+              subtitle="Find a show you may like"
+            />
           </div>
           <div className="col-sm-12 col-md-4">
             <input style={{ width: "100%" }} type="text" />
