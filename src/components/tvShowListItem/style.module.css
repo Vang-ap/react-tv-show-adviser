@@ -1,5 +1,6 @@
 .container {
   cursor: pointer;
+  position: relative;
   width: 300px;
 }
 

@@ -7,7 +7,7 @@ import styleApp from "./style.module.css";
 import { TvShowDetail } from "./components/tvShowDetail/TvShowDetail.jsx";
 import { Logo } from "./components/logo/logo.jsx";
 import logoImage from "./assets/images/logo.png";
-import { TvShowListItem } from "./components/tvShowListItem/TvShowListItem.jsx";
+import { TvShowList } from "./components/tvShowList/TvShowList.jsx";
 
 export function App() {
   const [currentTvShow, setCurrentTvShow] = useState();
@@ -78,28 +78,8 @@ export function App() {
         {currentTvShow && <TvShowDetail tvShow={currentTvShow} />}
       </div>
       <div className={styleApp.recommendations}>
-        {currentTvShow && (
-          <>
-            <TvShowListItem
-              onClick={setCurrentTvShowRecommendation}
-              tvShow={currentTvShow}
-            />
-
-            <TvShowListItem
-              onClick={setCurrentTvShowRecommendation}
-              tvShow={currentTvShow}
-            />
-
-            <TvShowListItem
-              onClick={setCurrentTvShowRecommendation}
-              tvShow={currentTvShow}
-            />
-
-            <TvShowListItem
-              onClick={setCurrentTvShowRecommendation}
-              tvShow={currentTvShow}
-            />
-          </>
+        {recommendationList && recommendationList.length > 0 && (
+          <TvShowList tvShowList={recommendationList} />
         )}
       </div>
     </div>
