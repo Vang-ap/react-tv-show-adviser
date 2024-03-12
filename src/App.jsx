@@ -46,8 +46,13 @@ export function App() {
 
   console.log("** currentTvShow: ", currentTvShow);
 
-  function setCurrentTvShowRecommendation(tvShow) {
-    alert(JSON.stringify(tvShow));
+  async function searchTvShow(tvShowName) {
+    console.log("** tvShowName: ", tvShowName);
+    const searchResponse = await TvShowAPI.fetchByTitle(tvShowName);
+
+    if (searchResponse.length > 0) {
+      setCurrentTvShow(searchResponse[0]);
+    }
   }
 
   console.log("*** recommendationList: ", recommendationList);
@@ -71,7 +76,7 @@ export function App() {
             />
           </div>
           <div className="col-sm-12 col-md-4">
-            <SearchBar />
+            <SearchBar onSubmit={searchTvShow} />
           </div>
         </div>
       </div>

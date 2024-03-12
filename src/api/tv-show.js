@@ -15,4 +15,12 @@ export class TvShowAPI {
     // console.log("** response fetchRecommendations", response.data.results);
     return response.data.results;
   }
+
+  static async fetchByTitle(title) {
+    const response = await axios.get(
+      `${BASE_URL}search/tv${API_KEY_PARAM}&query=${title}`
+    );
+    // console.log("** response fetchByTitle", response.data.results);
+    return response.data.results;
+  }
 }
