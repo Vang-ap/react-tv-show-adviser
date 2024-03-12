@@ -79,7 +79,10 @@ export function App() {
       </div>
       <div className={styleApp.recommendations}>
         {recommendationList && recommendationList.length > 0 && (
-          <TvShowList tvShowList={recommendationList} />
+          <TvShowList
+            onClickItem={setCurrentTvShow}
+            tvShowList={recommendationList}
+          />
         )}
       </div>
     </div>

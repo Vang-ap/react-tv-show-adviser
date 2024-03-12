@@ -1,7 +1,7 @@
 import { TvShowListItem } from "../tvShowListItem/TvShowListItem";
 import styleTvShowList from "./style.module.css";
 
-export function TvShowList({ tvShowList }) {
+export function TvShowList({ tvShowList, onClickItem }) {
   return (
     <>
       <div className={styleTvShowList.title}> You may also like:</div>
@@ -10,7 +10,7 @@ export function TvShowList({ tvShowList }) {
         {tvShowList.map((tvShow) => {
           return (
             <span key={tvShow.id} className={styleTvShowList.tv_show_list_item}>
-              <TvShowListItem tvShow={tvShow} onClick={() => ""} />
+              <TvShowListItem onClick={onClickItem} tvShow={tvShow} />
             </span>
           );
         })}
