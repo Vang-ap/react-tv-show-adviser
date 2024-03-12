@@ -16,19 +16,29 @@ export function App() {
 
   // get current tv show populars
   async function fetchPopulars() {
-    const populars = await TvShowAPI.fetchPopulars();
+    try {
+      const populars = await TvShowAPI.fetchPopulars();
 
-    if (populars.length > 0) {
-      setCurrentTvShow(populars[0]);
+      if (populars.length > 0) {
+        setCurrentTvShow(populars[0]);
+      }
+    } catch (error) {
+      alert("Erreur durant la recherche des séries populaires");
+      console.error("Message d'erreur : ", error.message);
     }
   }
 
   // get list tv show recommendations
   async function fetchRecommendations(tvShowId) {
-    const recommendations = await TvShowAPI.fetchRecommendations(tvShowId);
+    try {
+      const recommendations = await TvShowAPI.fetchRecommendations(tvShowId);
 
-    if (recommendations.length > 0) {
-      setRecommendationList(recommendations.slice(0, 10));
+      if (recommendations.length > 0) {
+        setRecommendationList(recommendations.slice(0, 10));
+      }
+    } catch (error) {
+      alert("Erreur durant la recherche des séries recommandées");
+      console.error("Message d'erreur : ", error.message);
     }
   }
 
@@ -44,18 +54,19 @@ export function App() {
     }
   }, [currentTvShow]);
 
-  console.log("** currentTvShow: ", currentTvShow);
-
   async function searchTvShow(tvShowName) {
-    console.log("** tvShowName: ", tvShowName);
-    const searchResponse = await TvShowAPI.fetchByTitle(tvShowName);
+    try {
+      console.log("** tvShowName: ", tvShowName);
+      const searchResponse = await TvShowAPI.fetchByTitle(tvShowName);
 
-    if (searchResponse.length > 0) {
-      setCurrentTvShow(searchResponse[0]);
+      if (searchResponse.length > 0) {
+        setCurrentTvShow(searchResponse[0]);
+      }
+    } catch (error) {
+      alert("Erreur durant la recherche de la série");
+      console.error("Message d'erreur : ", error.message);
     }
   }
-
-  console.log("*** recommendationList: ", recommendationList);
 
   return (
     <div
