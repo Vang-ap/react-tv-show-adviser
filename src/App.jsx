@@ -4,11 +4,11 @@ import { BACKDROP_BASE_URL } from "./config.js";
 import "./global.css";
 
 import styleApp from "./style.module.css";
-import { TvShowDetail } from "./components/tvShowDetail/TvShowDetail.jsx";
 import { Logo } from "./components/logo/logo.jsx";
 import logoImage from "./assets/images/logo.png";
 import { TvShowList } from "./components/tvShowList/TvShowList.jsx";
 import { SearchBar } from "./components/searchBar/SearchBar.jsx";
+import { TvShowDetail } from "./components/TVShowDetail/TVShowDetail.jsx";
 
 export function App() {
   const [currentTvShow, setCurrentTvShow] = useState();
