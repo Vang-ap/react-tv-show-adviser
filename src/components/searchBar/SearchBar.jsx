@@ -4,7 +4,7 @@ import { Search as SearchIcon } from "react-bootstrap-icons";
 export function SearchBar({ onSubmit }) {
   function submit(e) {
     if (e.key === "Enter" && e.target.value.trim() !== "") {
-      console.log("** e.target.value: ", e.target.value);
+      // console.log("** e.target.value: ", e.target.value);
       onSubmit(e.target.value);
     }
   }

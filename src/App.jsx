@@ -56,7 +56,7 @@ export function App() {
 
   async function searchTvShow(tvShowName) {
     try {
-      console.log("** tvShowName: ", tvShowName);
+      // console.log("** tvShowName: ", tvShowName);
       const searchResponse = await TvShowAPI.fetchByTitle(tvShowName);
 
       if (searchResponse.length > 0) {
