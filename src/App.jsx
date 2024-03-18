@@ -10,6 +10,10 @@ import { TvShowList } from "./components/tvShowList/TvShowList.jsx";
 import { SearchBar } from "./components/searchBar/SearchBar.jsx";
 import { TvShowDetail } from "./components/tvShowDetail/TvShowDetail.jsx";
 
+console.log(
+  "*** process.env.REACT_APP_API_KEY_PARAM",
+  process.env.REACT_APP_API_KEY_PARAM
+);
 export function App() {
   const [currentTvShow, setCurrentTvShow] = useState();
   const [recommendationList, setRecommendationList] = useState([]);
