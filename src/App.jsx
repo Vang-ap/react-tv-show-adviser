@@ -8,7 +8,7 @@ import { Logo } from "./components/logo/logo.jsx";
 import logoImage from "./assets/images/logo.png";
 import { TvShowList } from "./components/tvShowList/TvShowList.jsx";
 import { SearchBar } from "./components/searchBar/SearchBar.jsx";
-import { TvShowDetail } from "./components/TVShowDetail/TVShowDetail.jsx";
+import { TvShowDetail } from "./components/tvShowDetail/TvShowDetail.jsx";
 
 export function App() {
   const [currentTvShow, setCurrentTvShow] = useState();
